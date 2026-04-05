@@ -1,0 +1,132 @@
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(250px, 1.5fr) 4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.about-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-timelines {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.about-image-wrapper:hover {
+  transform: translateY(-5px) translateX(-5px);
+}
+
+
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  filter: grayscale(100%) contrast(1.1);
+  transition: all 0.5s ease;
+}
+
+.about-image-wrapper:hover .profile-image {
+  filter: grayscale(0%) contrast(1);
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar-card h3 svg {
+  color: var(--primary-color);
+}
+
+.timeline {
+  list-style: none;
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.3rem;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.timeline li::after {
+  content: "";
+  position: absolute;
+  left: 3px; top: 1.2rem;
+  width: 2px; height: calc(100% + 0.5rem);
+  background: var(--border-color);
+}
+
+.timeline li:last-child::after {
+  display: none;
+}
+
+.timeline h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.timeline .date {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--mono-font);
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-timelines {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image-wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}

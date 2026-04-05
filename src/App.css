@@ -1,0 +1,36 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.section-line {
+  height: 1px;
+  background: var(--border-color);
+  flex-grow: 1;
+}
+
+.section-number {
+  font-family: var(--mono-font);
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
