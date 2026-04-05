@@ -26,12 +26,13 @@ const Navbar = () => {
           <a href="#projects"><span className="nav-num">02.</span> Projects</a>
           <a href="#skills"><span className="nav-num">03.</span> Skills</a>
           <a href="#achievements"><span className="nav-num">04.</span> Achievements</a>
+          <a href="#contact"><span className="nav-num">05.</span> Contact</a>
         </div>
 
         <div className="social-links desktop-only">
           <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer"><Github size={20} /></a>
           <a href="https://www.linkedin.com/in/vanshajpmohan/" target="_blank" rel="noreferrer"><Linkedin size={20} /></a>
-          <a href="mailto:vanshajkumar145@gmail.com" className="btn btn-primary btn-sm">Let's Connect</a>
+          <a href="#contact" className="btn btn-primary btn-sm">Let's Connect</a>
         </div>
 
         <button 
@@ -48,6 +49,7 @@ const Navbar = () => {
           <a href="#projects" onClick={() => setMobileMenuOpen(false)}>02. Projects</a>
           <a href="#skills" onClick={() => setMobileMenuOpen(false)}>03. Skills</a>
           <a href="#achievements" onClick={() => setMobileMenuOpen(false)}>04. Achievements</a>
+          <a href="#contact" onClick={() => setMobileMenuOpen(false)}>05. Contact</a>
         </div>
       )}
     </nav>
