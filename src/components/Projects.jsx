@@ -13,7 +13,6 @@ const featuredProjects = [
     github: 'https://github.com/Vanshaj14Mohan/Adidas-Project',
     link: '#',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
-    titleColor: 'var(--primary-color)',
     features: [
       'Retailer-wise total sales breakdown and monthly sales trends over time.',
       'State-level dimensions comparing total sales vs units sold.',
@@ -125,12 +124,7 @@ const Projects = () => {
             
             <div className={`project-content ${index % 2 !== 0 ? 'content-left' : 'content-right'}`}>
               <p className="project-overline">Featured Project</p>
-              <h3 
-                className="project-title"
-                style={{ color: project.titleColor || 'var(--text-primary)' }}
-              >
-                {project.title}
-              </h3>
+              <h3 className="project-title">{project.title}</h3>
               
               <div className="project-desc-box card">
                 <p>{project.description}</p>
