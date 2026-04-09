@@ -57,7 +57,8 @@
   gap: 2rem;
 }
 
-.sidebar-card h3 {
+.sidebar-card h3,
+.github-activity-wrapper h3 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -68,8 +69,17 @@
   padding-bottom: 0.5rem;
 }
 
-.sidebar-card h3 svg {
+.sidebar-card h3 svg,
+.github-activity-wrapper h3 svg {
   color: var(--primary-color);
+}
+
+.github-calendar-container {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.github-calendar-container::-webkit-scrollbar {
+  height: 6px;
 }
 
 .timeline {

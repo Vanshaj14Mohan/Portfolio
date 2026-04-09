@@ -1,5 +1,6 @@
 import React from 'react';
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { Briefcase, GraduationCap, Github } from 'lucide-react';
+import GitHubCalendar from 'react-github-calendar';
 import './About.css';
 
 const About = () => {
@@ -78,6 +79,26 @@ const About = () => {
                   <span className="date">2025 | GSSoC & SSoC</span>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          {/* GitHub Activity Section */}
+          <div className="github-activity-wrapper card">
+            <h3><Github size={20} /> Open Source Activity</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+              Live daily snapshot of my code contributions pulled directly from GitHub.
+            </p>
+            <div className="github-calendar-container">
+              <GitHubCalendar 
+                username="Vanshaj14Mohan" 
+                colorScheme="dark"
+                theme={{
+                  dark: ['#0b1221', '#004c54', '#008594', '#00b5c8', '#00e5ff'],
+                }}
+                fontSize={12}
+                blockSize={12}
+                blockMargin={4}
+              />
             </div>
           </div>
         </div>
