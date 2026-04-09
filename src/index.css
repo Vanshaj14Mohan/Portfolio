@@ -1,16 +1,16 @@
 :root {
-  --bg-color: #050a14;
-  --surface-color: #0b1221;
-  --surface-color-light: #152238;
-  --primary-color: #00e5ff; /* Cyan */
-  --secondary-color: #4f8aff; /* Neon Blue */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --glow: 0 0 20px rgba(0, 229, 255, 0.2);
+  --bg-color: #0a0a0a;
+  --surface-color: #171717;
+  --surface-color-light: #262626;
+  --primary-color: #f59e0b;
+  --secondary-color: #d97706;
+  --text-primary: #fdfdfd;
+  --text-secondary: #a3a3a3;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glow: 0 0 20px rgba(245, 158, 11, 0.2);
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --mono-font: 'Roboto Mono', 'Fira Code', monospace;
-  --active-select: rgba(0, 229, 255, 0.3);
+  --active-select: rgba(245, 158, 11, 0.3);
 }
 
 * {
