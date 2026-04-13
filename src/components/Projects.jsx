@@ -11,7 +11,7 @@ const featuredProjects = [
     longDescription: 'This Streamlit-powered dashboard provides an interactive visualization of Adidas sales data with multiple analytical views. Key features include interactive Plotly charts, data expanders for detailed views, and download options for all visualized datasets. The dashboard offers a comprehensive overview of sales performance across different dimensions with a clean, user-friendly interface.',
     tech: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'Excel'],
     github: 'https://github.com/Vanshaj14Mohan/Adidas-Project',
-    link: '#',
+    link: 'https://www.linkedin.com/posts/vanshajpmohan_datascience-businessintelligence-retailanalytics-activity-7318529098429972480-_j3l?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-yenQBSeylsMeO2mR77lVL4hqIcku3kjs',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
     features: [
       'Retailer-wise total sales breakdown and monthly sales trends over time.',
@@ -27,7 +27,7 @@ const featuredProjects = [
     longDescription: 'WaveBrush is a real-time virtual painting application built using Python, OpenCV, and MediaPipe. It allows drawing and erasing through intuitive hand gestures, demonstrating computer vision’s potential in touchless interfaces, creative expression, and human-computer interaction, forming a foundation for future gesture-based interactive applications.',
     tech: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
     github: 'https://github.com/Vanshaj14Mohan',
-    link: '#',
+    link: 'https://www.linkedin.com/posts/vanshajpmohan_wavebrush-computervision-opencv-activity-7365332734707163137-MsER?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-yenQBSeylsMeO2mR77lVL4hqIcku3kjs',
     image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000',
     features: [
       'Modular hand tracking approach for precise landmark detection.',
@@ -42,7 +42,7 @@ const featuredProjects = [
     longDescription: 'An interactive web application built using Streamlit and Plotly to visualize and analyze sales data from a Superstore dataset. This dashboard allows users to upload their own Excel or CSV files, filter data in real-time, and explore dynamic insights through a wide variety of visualizations ranging from Time Series Analysis to Monthly Sales Heatmaps.',
     tech: ['Python', 'Streamlit', 'Plotly', 'Pandas'],
     github: 'https://github.com/Vanshaj14Mohan/SuperstoreViz',
-    link: '#',
+    link: 'https://www.linkedin.com/posts/vanshajpmohan_datascience-businessintelligence-python-activity-7338887885204402176-qfzi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-yenQBSeylsMeO2mR77lVL4hqIcku3kjs',
     image: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=1000',
     features: [
       'Custom File Upload supports .csv, .xlsx, .xls, and .txt data formats for custom data input.',
@@ -60,7 +60,7 @@ const archiveProjects = [
     madeAt: 'Personal',
     tech: ['Python', 'OpenCV', 'MediaPipe'],
     github: 'https://github.com/Vanshaj14Mohan',
-    link: '#',
+    link: 'https://www.linkedin.com/posts/vanshajpmohan_handiq-computervision-opencv-activity-7353634920872755202-6efH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-yenQBSeylsMeO2mR77lVL4hqIcku3kjs',
     image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=1000',
     description: 'A real-time hand tracking and finger counting application built using Python, MediaPipe, and OpenCV.',
     longDescription: 'This project demonstrates a real-time finger counting system using computer vision. Built with OpenCV and MediaPipe, it detects and counts fingers on the right hand only, and displays the result visually using overlay images and a dynamic interface. It is inspired by a modular hand tracking system developed earlier and reuses a custom-built HandTrackingModule.py for precise hand landmark detection.',
