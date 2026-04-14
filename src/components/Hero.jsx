@@ -102,7 +102,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Python Terminal Toy */}
+        {/* Python Terminal Toy - Fully Interactive Version */}
         <motion.div
           className="hero-terminal desktop-only"
           initial={{ opacity: 0, x: 50 }}
@@ -114,27 +114,65 @@ const Hero = () => {
               <span></span><span></span><span></span>
             </div>
             <div className="terminal-title"><Code size={14} /> predict_hire.py</div>
-            <button className="terminal-run-btn interactive" onClick={runSim} disabled={isRunning}>
-              <Play size={12} /> {isRunning ? "Running..." : "Run Sim"}
-            </button>
           </div>
-          <div className="terminal-body">
-            <p className="code-comment"># Evaluate candidate potential</p>
-            <p className="code-line"><span className="keyword">import</span> machine_learning <span className="keyword">as</span> ml</p>
-            <p className="code-line"><span className="keyword">import</span> vanshaj</p>
+          <div className="terminal-body" onClick={() => document.getElementById('terminal-input').focus()}>
+            <p className="code-comment"># Welcome to the interactive Vanshaj console.</p>
+            <p className="code-comment"># Type 'help' for commands, or 'python predict_hire.py'</p>
             <br />
-            <p className="code-line">model = ml.<span className="function">load_model</span>(<span className="string">'industry_standard_v2'</span>)</p>
-            <p className="code-line">prediction = model.<span className="function">predict</span>(vanshaj.profile)</p>
-            <br />
+            
+            <div className="terminal-history">
+              {terminalOutput.split('\n').map((line, i) => (
+                <p key={i} className={line.startsWith('>>>') ? "output-line highlight-green" : "output-line"}>{line}</p>
+              ))}
+            </div>
 
-            {terminalOutput && (
-              <div className="terminal-output animate-in">
-                {terminalOutput.split('\n').map((line, i) => (
-                  <p key={i} className="output-line">{line}</p>
-                ))}
-              </div>
-            )}
-            {!terminalOutput && <p className="code-prompt">&gt; Click 'Run Sim' to execute...</p>}
+            <div className="terminal-input-row" style={{ display: 'flex', alignItems: 'center', marginTop: '0.5rem' }}>
+              <span className="terminal-prompt" style={{ color: 'var(--primary-color)', marginRight: '8px' }}>~$</span>
+              <input 
+                id="terminal-input"
+                type="text" 
+                className="terminal-input"
+                style={{ 
+                  background: 'transparent', 
+                  border: 'none', 
+                  color: 'var(--text-primary)', 
+                  fontFamily: 'var(--mono-font)', 
+                  outline: 'none', 
+                  flex: 1,
+                  fontSize: '0.9rem'
+                }}
+                autoComplete="off"
+                disabled={isRunning}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    const cmd = e.target.value.trim().toLowerCase();
+                    e.target.value = '';
+                    
+                    setTerminalOutput(prev => prev + (prev ? '\n' : '') + `~$ ${cmd}`);
+                    
+                    if (cmd === 'python predict_hire.py') {
+                      setIsRunning(true);
+                      setTimeout(() => setTerminalOutput(prev => prev + '\nLoading parameters... [OK]'), 400);
+                      setTimeout(() => setTerminalOutput(prev => prev + '\nAnalyzing Vanshaj.profile...'), 800);
+                      setTimeout(() => {
+                        setTerminalOutput(prev => prev + "\n>>> OUTPUT: 99.9% CHANCE OF SUCCESS\n>>> RECOMMENDATION: STRONG HIRE. REACH OUT IMMEDIATELY.");
+                        setIsRunning(false);
+                      }, 1600);
+                    } else if (cmd === 'help') {
+                      setTerminalOutput(prev => prev + '\nAvailable commands:\n- python predict_hire.py\n- clear\n- whoami');
+                    } else if (cmd === 'clear') {
+                      setTerminalOutput('');
+                    } else if (cmd === 'whoami') {
+                      setTerminalOutput(prev => prev + '\nrecruiter_guest');
+                    } else if (cmd === '') {
+                      // Do nothing for empty
+                    } else {
+                      setTerminalOutput(prev => prev + `\nCommand not found: ${cmd}. Type 'help' for options.`);
+                    }
+                  }
+                }}
+              />
+            </div>
           </div>
         </motion.div>
       </div>
