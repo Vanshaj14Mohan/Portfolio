@@ -26,9 +26,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           exit={{ opacity: 0, y: 30, scale: 0.95 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
         >
-          <button className="modal-close-btn" onClick={onClose}>
-            <X size={24} />
-          </button>
+          {/* The close button is now sticky at the top-right of the ENTIRE modal */}
+          <div className="modal-close-wrapper">
+            <button className="modal-close-btn" onClick={onClose}>
+              <X size={24} />
+            </button>
+          </div>
 
           <div className="modal-image-container">
             <div className="modal-image-overlay"></div>
@@ -36,7 +39,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           </div>
 
           <div className="modal-body">
-            <h2 className="modal-title">{project.title}</h2>
+            {/* Sticky Glass Title Bar */}
+            <div className="modal-sticky-header">
+              <h2 className="modal-title">{project.title}</h2>
+            </div>
+            
             <div className="modal-tech">
               {project.tech.map((t, i) => (
                 <span key={i} className="badge">{t}</span>

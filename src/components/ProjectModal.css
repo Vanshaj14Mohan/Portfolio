@@ -23,25 +23,40 @@
   border: 1px solid var(--border-color);
 }
 
+.modal-close-wrapper {
+  position: sticky;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  pointer-events: none; /* so it doesn't block the image */
+  height: 0; /* take up no vertical space */
+}
+
 .modal-close-btn {
-  position: absolute;
-  top: 1.5rem; right: 1.5rem;
-  background: rgba(5, 10, 20, 0.5);
+  background: rgba(5, 10, 20, 0.7);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  width: 40px; height: 40px;
+  width: 44px; 
+  height: 44px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
   transition: all 0.3s;
+  pointer-events: auto; /* re-enable clicks on the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .modal-close-btn:hover {
   background: var(--primary-color);
   color: var(--bg-color);
   transform: rotate(90deg);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
 }
 
 .modal-image-container {
@@ -70,9 +85,22 @@
   margin-top: -50px;
 }
 
+.modal-sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* below the close button but above content */
+  background: rgba(5, 10, 20, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem 0 1rem 0;
+  margin: 0 -3rem 1rem -3rem; /* pull out to touch edges of modal body padding */
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .modal-title {
   font-size: 2.2rem;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .modal-tech {
