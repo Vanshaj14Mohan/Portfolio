@@ -88,6 +88,14 @@ const CustomCursor = () => {
         animate={isHovering ? "hover" : "default"}
         transition={{ type: "tween", ease: "linear", duration: 0 }}
       />
+      <motion.div
+        className="cursor-spotlight"
+        animate={{
+          x: mousePosition.x - 300,
+          y: mousePosition.y - 300,
+        }}
+        transition={{ type: "tween", ease: "linear", duration: 0 }}
+      />
     </>
   );
 };
