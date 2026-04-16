@@ -21,21 +21,8 @@
   box-shadow: 0 0 10px var(--primary-color);
 }
 
-.cursor-spotlight {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 65%);
-  mix-blend-mode: screen;
-}
-
 @media (max-width: 768px) {
-  .cursor-outline, .cursor-dot, .cursor-spotlight {
+  .cursor-outline, .cursor-dot {
     display: none;
   }
 }
