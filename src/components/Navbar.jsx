@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { motion, useScroll, useSpring } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Framer Motion Scroll Progress
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,22 +16,6 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      {/* The Scroll Progress Beam */}
-      <motion.div
-        className="scroll-progress-beam"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '2px',
-          background: 'var(--primary-color)',
-          transformOrigin: '0%',
-          scaleX: scaleX,
-          zIndex: 9999,
-          boxShadow: '0 0 15px var(--primary-color), 0 0 5px var(--primary-color)'
-        }}
-      />
       <div className="container nav-container">
         <div className="logo">
           <a href="#">V.Mohan<span className="dot">.</span></a>
