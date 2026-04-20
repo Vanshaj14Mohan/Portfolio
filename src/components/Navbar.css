@@ -43,8 +43,10 @@
   position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
 }
 
 .nav-num {
@@ -131,8 +133,10 @@
     transition: color 0.3s ease;
   }
 
-  .mobile-nav-links a:hover {
+  .mobile-nav-links a:hover,
+  .mobile-nav-links a.active {
     color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
   }
 
   .mobile-social-links {

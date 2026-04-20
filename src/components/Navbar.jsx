@@ -5,12 +5,32 @@ import './Navbar.css';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Spy Scroll mechanic
+      const sections = ['about', 'projects', 'skills', 'achievements', 'contact'];
+      let current = '';
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          // Adjust 100 for navbar height offset
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = section;
+          }
+        }
+      }
+      setActiveSection(current);
     };
+    
     window.addEventListener('scroll', handleScroll);
+    // Call once to set initial state
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -22,11 +42,11 @@ const Navbar = () => {
         </div>
 
         <div className="nav-links desktop-only">
-          <a href="#about"><span className="nav-num">01.</span> About</a>
-          <a href="#projects"><span className="nav-num">02.</span> Projects</a>
-          <a href="#skills"><span className="nav-num">03.</span> Skills</a>
-          <a href="#achievements"><span className="nav-num">04.</span> Achievements</a>
-          <a href="#contact"><span className="nav-num">05.</span> Contact</a>
+          <a href="#about" className={activeSection === 'about' ? 'active' : ''}><span className="nav-num">01.</span> About</a>
+          <a href="#projects" className={activeSection === 'projects' ? 'active' : ''}><span className="nav-num">02.</span> Projects</a>
+          <a href="#skills" className={activeSection === 'skills' ? 'active' : ''}><span className="nav-num">03.</span> Skills</a>
+          <a href="#achievements" className={activeSection === 'achievements' ? 'active' : ''}><span className="nav-num">04.</span> Achievements</a>
+          <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}><span className="nav-num">05.</span> Contact</a>
         </div>
 
         <div className="social-links desktop-only">
@@ -44,11 +64,11 @@ const Navbar = () => {
       </div>
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="mobile-nav-links">
-          <a href="#about" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">01.</span> About</a>
-          <a href="#projects" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">02.</span> Projects</a>
-          <a href="#skills" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">03.</span> Skills</a>
-          <a href="#achievements" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">04.</span> Achievements</a>
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">05.</span> Contact</a>
+          <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}><span className="nav-num">01.</span> About</a>
+          <a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}><span className="nav-num">02.</span> Projects</a>
+          <a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}><span className="nav-num">03.</span> Skills</a>
+          <a href="#achievements" className={activeSection === 'achievements' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}><span className="nav-num">04.</span> Achievements</a>
+          <a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}><span className="nav-num">05.</span> Contact</a>
         </div>
         <div className="mobile-social-links">
           <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer"><Github size={22} /></a>
