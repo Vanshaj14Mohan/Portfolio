@@ -59,33 +59,43 @@ const Hero = () => {
     setDownloadState("loading");
     setDownloadText("Fetching _vanshaj.pdf");
     
+    // 1st chunk
     setTimeout(() => {
-      setDownloadText("Compiling [|||       ] 30%");
+      setDownloadText("Compiling [||        ] 25%");
+      
+      // 2nd chunk
       setTimeout(() => {
-        setDownloadText("Compiling [|||||     ] 55%");
+        setDownloadText("Compiling [||||      ] 50%");
+        
+        // 3rd chunk
         setTimeout(() => {
-          setDownloadText("Ready [||||||||||] 100%");
+          setDownloadText("Compiling [||||||    ] 75%");
           
+          // 4th chunk (Done)
           setTimeout(() => {
-            setDownloadState("done");
-            setDownloadText("Download complete");
+            setDownloadText("Ready [||||||||] 100%");
             
-            // Trigger actual download
-            const link = document.createElement('a');
-            link.href = "/Vanshaj Resume.pdf";
-            link.download = "Vanshaj Resume.pdf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Reset after a few seconds
             setTimeout(() => {
-              setDownloadState("idle");
-              setDownloadText("Download CV");
-            }, 3000);
-          }, 600);
-        }, 400);
-      }, 400);
+              setDownloadState("done");
+              setDownloadText("Download complete");
+              
+              // Trigger actual download
+              const link = document.createElement('a');
+              link.href = "/Vanshaj Resume.pdf";
+              link.download = "Vanshaj Resume.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+              
+              // Reset after a few seconds
+              setTimeout(() => {
+                setDownloadState("idle");
+                setDownloadText("Download CV");
+              }, 3000);
+            }, 600);
+          }, 350);
+        }, 350);
+      }, 350);
     }, 400);
   };
 
