@@ -7,6 +7,7 @@ import './Projects.css';
 const featuredProjects = [
   {
     title: 'Adidas Interactive Sales Dashboard',
+    category: 'Data Analytics',
     description: 'A comprehensive sales analytics dashboard built with Streamlit and Plotly providing real-time data visualization of Adidas performance metrics.',
     longDescription: 'This Streamlit-powered dashboard provides an interactive visualization of Adidas sales data with multiple analytical views. Key features include interactive Plotly charts, data expanders for detailed views, and download options for all visualized datasets. The dashboard offers a comprehensive overview of sales performance across different dimensions with a clean, user-friendly interface.',
     tech: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'Excel'],
@@ -23,6 +24,7 @@ const featuredProjects = [
   },
   {
     title: 'WaveBrush & HandSight',
+    category: 'Computer Vision',
     description: 'An AI-powered real-time virtual painting system and gesture tracking pipeline using OpenCV and MediaPipe.',
     longDescription: 'WaveBrush is a real-time virtual painting application built using Python, OpenCV, and MediaPipe. It allows drawing and erasing through intuitive hand gestures, demonstrating computer vision’s potential in touchless interfaces, creative expression, and human-computer interaction, forming a foundation for future gesture-based interactive applications.',
     tech: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
@@ -38,6 +40,7 @@ const featuredProjects = [
   },
   {
     title: 'SuperstoreViz Analytics Tool',
+    category: 'Data Analytics',
     description: 'A dynamic data visualization web application that enables users to upload custom datasets and explore dynamic trends through rich visual filtering.',
     longDescription: 'An interactive web application built using Streamlit and Plotly to visualize and analyze sales data from a Superstore dataset. This dashboard allows users to upload their own Excel or CSV files, filter data in real-time, and explore dynamic insights through a wide variety of visualizations ranging from Time Series Analysis to Monthly Sales Heatmaps.',
     tech: ['Python', 'Streamlit', 'Plotly', 'Pandas'],
@@ -92,6 +95,10 @@ const archiveProjects = [
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [filter, setFilter] = useState('All');
+  
+  const categories = ['All', 'Data Analytics', 'Computer Vision'];
+  const filteredProjects = featuredProjects.filter(p => filter === 'All' || p.category === filter);
 
   return (
     <section id="projects" className="container projects-section">
@@ -107,15 +114,34 @@ const Projects = () => {
         <div className="section-line"></div>
       </motion.div>
 
+      <motion.div 
+        className="project-filters"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        {categories.map((cat) => (
+          <button 
+            key={cat}
+            className={`filter-btn ${filter === cat ? 'active' : ''}`}
+            onClick={() => setFilter(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </motion.div>
+
       <div className="featured-projects">
-        {featuredProjects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <motion.div 
+            layout
             className="featured-project-card" 
-            key={index}
+            key={project.title}
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="project-image-container" onClick={() => setSelectedProject(project)}>
               <div className="project-image-overlay"></div>
