@@ -5,20 +5,12 @@ import './Contact.css';
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
-  const [primaryCopied, setPrimaryCopied] = useState(false);
 
   const copyEmail = (e) => {
     e.preventDefault();
     navigator.clipboard.writeText("vanshajkumar145@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleCopyPrimary = (e) => {
-    e.preventDefault();
-    navigator.clipboard.writeText("vanshajkumar145@gmail.com");
-    setPrimaryCopied(true);
-    setTimeout(() => setPrimaryCopied(false), 2500);
   };
 
   return (
@@ -49,14 +41,9 @@ const Contact = () => {
           I'll try my best to get back to you!
         </p>
 
-        <button 
-          onClick={handleCopyPrimary} 
-          className={`btn btn-primary contact-btn ${primaryCopied ? 'success-state' : ''}`}
-          aria-label="Copy Email Address"
-        >
-          {primaryCopied ? <Check size={18} /> : <Send size={18} />} 
-          {primaryCopied ? "Email Copied!" : "vanshajkumar145@gmail.com"}
-        </button>
+        <a href="mailto:vanshajkumar145@gmail.com" className="btn btn-primary contact-btn">
+          <Send size={18} /> Say Hello
+        </a>
 
         <div className="contact-socials">
           <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
