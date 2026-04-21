@@ -37,6 +37,8 @@ const TypeWriter = ({ words }) => {
 const Hero = () => {
   const [terminalOutput, setTerminalOutput] = useState("");
   const [isRunning, setIsRunning] = useState(false);
+  const [downloadState, setDownloadState] = useState("idle");
+  const [downloadText, setDownloadText] = useState("Download CV");
 
   const runSim = () => {
     setIsRunning(true);
@@ -48,6 +50,43 @@ const Hero = () => {
         setIsRunning(false);
       }, 1200);
     }, 800);
+  };
+
+  const handleDownload = (e) => {
+    e.preventDefault();
+    if (downloadState !== "idle") return;
+    
+    setDownloadState("loading");
+    setDownloadText("Fetching _vanshaj.pdf");
+    
+    setTimeout(() => {
+      setDownloadText("Compiling [|||       ] 30%");
+      setTimeout(() => {
+        setDownloadText("Compiling [|||||     ] 55%");
+        setTimeout(() => {
+          setDownloadText("Ready [||||||||||] 100%");
+          
+          setTimeout(() => {
+            setDownloadState("done");
+            setDownloadText("Download complete");
+            
+            // Trigger actual download
+            const link = document.createElement('a');
+            link.href = "/Vanshaj Resume.pdf";
+            link.download = "Vanshaj Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Reset after a few seconds
+            setTimeout(() => {
+              setDownloadState("idle");
+              setDownloadText("Download CV");
+            }, 3000);
+          }, 600);
+        }, 400);
+      }, 400);
+    }, 400);
   };
 
   return (
@@ -93,8 +132,19 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               View My Work <ArrowRight size={18} />
             </a>
-            <a href="/Vanshaj Resume.pdf" download className="btn btn-secondary btn-outline">
-              <Download size={18} /> Download CV
+            <a 
+              href="/Vanshaj Resume.pdf" 
+              className={`btn btn-secondary btn-outline ${downloadState !== 'idle' ? 'downloading' : ''}`}
+              onClick={handleDownload}
+              style={{
+                fontFamily: downloadState !== 'idle' ? 'var(--mono-font)' : 'inherit',
+                pointerEvents: downloadState !== 'idle' ? 'none' : 'auto',
+                minWidth: '220px',
+                justifyContent: downloadState !== 'idle' ? 'flex-start' : 'center'
+              }}
+            >
+              {downloadState === "idle" ? <Download size={18} /> : <Terminal size={18} style={{color: 'var(--primary-color)'}} />} 
+              {downloadText}
             </a>
             <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer" className="btn btn-secondary">
               GitHub Profile
