@@ -40,10 +40,10 @@ const About = () => {
               achieving 25-35 FPS on live gesture recognition software. I am also highly active in open-source
               communities, acting as a contributor for GirlScript Summer of Code and Social Summer of Code.
             </p>
-             <p>
+            <p>
               And Recently as a React Intern at <strong>Lasa Financial Services</strong>, I Built a real-time financial dashboard using React and
-              TypeScript, featuring dynamic stock screeners and advanced charting for technical analysis. Engineered an 
-              automated data pipeline using the Google Sheets API to seamlessly ingest live market data, eliminating manual 
+              TypeScript, featuring dynamic stock screeners and advanced charting for technical analysis. Engineered an
+              automated data pipeline using the Google Sheets API to seamlessly ingest live market data, eliminating manual
               workflows and improving data accuracy.
             </p>
           </div>
