@@ -26,7 +26,7 @@ const About = () => {
         <div className="about-details-wrapper">
           <div className="about-text card">
             <p>
-              Hello! My name is Vanshaj, and I enjoy turning complex datasets into powerful
+              Hello! My name is Vanshaj P Mohan, and I enjoy turning complex datasets into powerful
               visualizations and automated workflows. My interest in data science stems from a
               desire to find the hidden stories within numbers.
             </p>
