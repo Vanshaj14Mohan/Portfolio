@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <div className="logo">
-          <a href="#">Vanshaj P. Mohan<span className="dot">.</span></a>
+          <a href="#">Vanshaj P Mohan<span className="dot">.</span></a>
         </div>
 
         <div className="nav-links desktop-only">
@@ -35,8 +35,8 @@ const Navbar = () => {
           <a href="#contact" className="btn btn-primary btn-sm">Let's Connect</a>
         </div>
 
-        <button 
-          className="mobile-menu-btn mobile-only" 
+        <button
+          className="mobile-menu-btn mobile-only"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
