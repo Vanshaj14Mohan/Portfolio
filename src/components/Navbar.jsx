@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <div className="logo">
-          <a href="#">V.Mohan<span className="dot">.</span></a>
+          <a href="#">V P. Mohan<span className="dot">.</span></a>
         </div>
 
         <div className="nav-links desktop-only">
