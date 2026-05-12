@@ -23,12 +23,12 @@ const featuredProjects = [
     ]
   },
   {
-    title: 'WaveBrush & HandSight',
+    title: 'WaveBrush — Real-Time Virtual Painting',
     category: 'Computer Vision',
     description: 'An AI-powered real-time virtual painting system and gesture tracking pipeline using OpenCV and MediaPipe.',
     longDescription: 'WaveBrush is a real-time virtual painting application built using Python, OpenCV, and MediaPipe. It allows drawing and erasing through intuitive hand gestures, demonstrating computer vision’s potential in touchless interfaces, creative expression, and human-computer interaction, forming a foundation for future gesture-based interactive applications.',
     tech: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
-    github: 'https://github.com/Vanshaj14Mohan',
+    github: 'https://github.com/Vanshaj14Mohan/WaveBrush',
     link: 'https://www.linkedin.com/posts/vanshajpmohan_wavebrush-computervision-opencv-activity-7365332734707163137-MsER?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-yenQBSeylsMeO2mR77lVL4hqIcku3kjs',
     image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000',
     features: [
