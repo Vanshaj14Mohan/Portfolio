@@ -23,7 +23,7 @@ const featuredProjects = [
     ]
   },
   {
-    title: 'WaveBrush — Real-Time Virtual Painting',
+    title: 'WaveBrush',
     category: 'Computer Vision',
     description: 'An AI-powered real-time virtual painting system and gesture tracking pipeline using OpenCV and MediaPipe.',
     longDescription: 'WaveBrush is a real-time virtual painting application built using Python, OpenCV, and MediaPipe. It allows drawing and erasing through intuitive hand gestures, demonstrating computer vision’s potential in touchless interfaces, creative expression, and human-computer interaction, forming a foundation for future gesture-based interactive applications.',
