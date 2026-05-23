@@ -30,8 +30,6 @@ const Navbar = () => {
         </div>
 
         <div className="social-links desktop-only">
-          <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer"><Github size={20} /></a>
-          <a href="https://www.linkedin.com/in/vanshajpmohan/" target="_blank" rel="noreferrer"><Linkedin size={20} /></a>
           <a href="#contact" className="btn btn-primary btn-sm">Let's Connect</a>
         </div>
 
@@ -49,10 +47,6 @@ const Navbar = () => {
           <a href="#skills" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">03.</span> Skills</a>
           <a href="#achievements" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">04.</span> Achievements</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)}><span className="nav-num">05.</span> Contact</a>
-        </div>
-        <div className="mobile-social-links">
-          <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer"><Github size={22} /></a>
-          <a href="https://www.linkedin.com/in/vanshajpmohan/" target="_blank" rel="noreferrer"><Linkedin size={22} /></a>
         </div>
         <a href="#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Let's Connect</a>
       </div>
