@@ -37,7 +37,6 @@ const featuredProjects = [
       'Optimized performance to achieve 25–35 FPS rendering in real-time.',
       'Forms a robust foundation for future touchless interfaces and gesture-based HCI.'
     ]
-    
   },
   {
     title: 'SuperstoreViz Analytics Tool',
