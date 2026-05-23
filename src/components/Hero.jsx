@@ -156,9 +156,6 @@ const Hero = () => {
               {downloadState === "idle" ? <Download size={18} /> : <Terminal size={18} style={{color: 'var(--primary-color)'}} />} 
               {downloadText}
             </a>
-            <a href="https://github.com/Vanshaj14Mohan" target="_blank" rel="noreferrer" className="btn btn-secondary">
-              GitHub Profile
-            </a>
           </motion.div>
         </div>
 
