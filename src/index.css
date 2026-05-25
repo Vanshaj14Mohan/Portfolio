@@ -1,16 +1,16 @@
 :root {
-  --bg-color: #000000; /* Pure Black */
-  --surface-color: #0A0A0A; /* Darkest Gray */
-  --surface-color-light: #171717; /* Dark Gray */
-  --primary-color: #39FF14; /* Phosphor Green */
-  --secondary-color: #00C900; /* Deeper Green */
-  --text-primary: #E5E5E5;
+  --bg-color: #121212; /* Matte Black */
+  --surface-color: #1C1C1C; /* Darker Surface */
+  --surface-color-light: #2A2A2A; /* Lighter Surface */
+  --primary-color: #F59E0B; /* Vibrant Amber */
+  --secondary-color: #EA580C; /* Deep Orange */
+  --text-primary: #FFFFFF;
   --text-secondary: #A3A3A3;
-  --border-color: rgba(57, 255, 20, 0.15);
-  --glow: 0 0 20px rgba(57, 255, 20, 0.3);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glow: 0 0 20px rgba(245, 158, 11, 0.3);
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --mono-font: 'Roboto Mono', 'Fira Code', monospace;
-  --active-select: rgba(57, 255, 20, 0.3);
+  --active-select: rgba(245, 158, 11, 0.3);
 }
 
 * {
@@ -41,7 +41,7 @@ body {
   border-left: 1px solid var(--border-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(57, 255, 20, 0.3);
+  background: rgba(245, 158, 11, 0.3);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -134,7 +134,7 @@ section {
 }
 
 .btn-primary {
-  background-color: rgba(57, 255, 20, 0.1);
+  background-color: rgba(245, 158, 11, 0.1);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
@@ -180,7 +180,7 @@ section {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border-color: rgba(57, 255, 20, 0.4);
+  border-color: rgba(245, 158, 11, 0.4);
 }
 
 /* Code look elements */
