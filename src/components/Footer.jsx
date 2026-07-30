@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -12,15 +19,17 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <h3 className="terminal-prompt">
-              <span className="term-user">vanshaj</span>
-              <span className="term-at">@</span>
-              <span className="term-host">portfolio</span>
-              <span className="term-colon">:</span>
-              <span className="term-path">~$</span>
-              <span className="term-cursor">_</span>
-            </h3>
+            <h3>Vanshaj P Mohan</h3>
             <p className="footer-tagline">Transforming complex data into actionable insights.</p>
+            <div className="status-widget">
+              <div className="status-indicator">
+                <span className="status-dot"></span>
+                <span className="status-text">Available for work</span>
+              </div>
+              <div className="status-time">
+                {time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' })}
+              </div>
+            </div>
           </div>
         </div>
         
