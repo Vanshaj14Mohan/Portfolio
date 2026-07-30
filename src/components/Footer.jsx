@@ -17,9 +17,6 @@ const Footer = () => {
           <p className="copyright">
             &copy; {new Date().getFullYear()} Vanshaj P Mohan. All rights reserved.
           </p>
-          <p className="built-with">
-            Built with React & Vite. Designed for performance.
-          </p>
         </div>
       </div>
     </footer>
