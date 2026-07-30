@@ -1,8 +1,12 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="footer-section">
       <div className="container">
@@ -17,6 +21,9 @@ const Footer = () => {
           <p className="copyright">
             &copy; {new Date().getFullYear()} Vanshaj P Mohan. All rights reserved.
           </p>
+          <button onClick={scrollToTop} className="back-to-top">
+            <ArrowUp size={16} /> Back to top
+          </button>
         </div>
       </div>
     </footer>
