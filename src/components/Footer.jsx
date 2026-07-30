@@ -12,7 +12,14 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <h3>Vanshaj P Mohan</h3>
+            <h3 className="terminal-prompt">
+              <span className="term-user">vanshaj</span>
+              <span className="term-at">@</span>
+              <span className="term-host">portfolio</span>
+              <span className="term-colon">:</span>
+              <span className="term-path">~$</span>
+              <span className="term-cursor">_</span>
+            </h3>
             <p className="footer-tagline">Transforming complex data into actionable insights.</p>
           </div>
         </div>

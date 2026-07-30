@@ -13,12 +13,46 @@
   gap: 1.5rem;
 }
 
-.footer-brand h3 {
-  font-family: var(--heading-font);
-  color: var(--text-primary);
+.terminal-prompt {
+  font-family: var(--mono-font, 'Roboto Mono', monospace);
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.term-user {
+  color: #00e5ff; /* Cyan */
+}
+
+.term-at {
+  color: var(--text-secondary);
+}
+
+.term-host {
+  color: #4f8aff; /* Neon Blue */
+}
+
+.term-colon {
+  color: var(--text-secondary);
+}
+
+.term-path {
+  color: #f1fa8c; /* Yellow-ish */
+  margin-right: 4px;
+}
+
+.term-cursor {
+  color: var(--text-primary);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .footer-tagline {
