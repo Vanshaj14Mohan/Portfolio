@@ -70,5 +70,4 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 └── vite.config.js       # Vite build configuration
 ```
 
-
 *Designed & Developed by Vanshaj P Mohan*
