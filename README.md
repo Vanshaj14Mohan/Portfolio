@@ -70,9 +70,5 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 └── vite.config.js       # Vite build configuration
 ```
 
-## 📝 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
 *Designed & Developed by Vanshaj P Mohan*
