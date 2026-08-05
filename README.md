@@ -40,7 +40,7 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/Vanshaj14Mohan/Portfolio.git
    ```
 2. Navigate to the project directory
    ```bash
