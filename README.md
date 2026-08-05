@@ -3,7 +3,7 @@
 A sleek, modern, and high-performance developer portfolio built with React and Vite. Designed with a premium "cyberpunk/neon" dark mode aesthetic, it features glassmorphism UI elements, smooth animations, and interactive components.
 
 ## 🚀 Live Demo
-*(Add your live URL here, e.g., https://vanshaj-portfolio.vercel.app)*
+*(Live URL here => https://vanshaj-portfolio-one.vercel.app/)*
 
 ## 🛠 Tech Stack
 
